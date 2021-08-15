@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../style.css" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Nicolas Vallois - GoBackN</title>
+        
+    </head>
+
+    <body>
+
+    	<a href="../../../index.html"> < Return to homepage</a>
+        
+        <h1>GoBackN</h1>
+
+        <section>
+            <h2>Table of content</h2>
+            <ul>
+                <li><a href="#presentation">Presentation of the project</a></li>
+                <li><a href="#implementation">Implementation</a></li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="presentation">Presentation of the project</h2>
+
+            <p>The goal of this project was to implement a protocole of type <a href="https://en.wikipedia.org/wiki/Go-Back-N_ARQ">go-Back-N</a> with a <a href="https://en.wikipedia.org/wiki/Network_congestion">controle of congestion</a> of type Reno. These are type of protocole to transmit data in a reliable way on an unreliable channel. To simulate the network, we worked on a simulator made by one of our teacher.</p>
+
+            <p>I'm not going to explain in details what is go-Back-N and the controle of congestion, to be simple, it's just a way to be sure that the data is well transmited with pipelining (that means that multiple chunk of data can be send one after the other). To choose the number of data that we want to send, we limit our self with a window size. This window size can change of size by the controle of congestion to avoid the congestion colapse.</p>
+
+            <p>It was a project by group of 2. I can't share the source code because it's a university project.</p>
+
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="implementation">Implementation</h2>
+
+            <p>The simulator of Network was in Java so we implement the protocol in Java inside the simulator. We also created a bit of code in python to read the data output by the simulator and plot it, we used Mathplotlib for that. It was a bit hard to merge go-Back-N and controle of congestion but with the help of our notes, we find a way to do it which work pretty much good.</p>
+
+            <p>You can see on the image just below a plot of some result that we get from the simulator, it shows the window size over time :</p>
+            <img src="images/plot.PNG">
+        </section>
+    </body>
+</html>

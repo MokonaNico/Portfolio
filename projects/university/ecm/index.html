@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../style.css" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Nicolas Vallois - Energy consumption management</title>
+        
+    </head>
+
+    <body>
+
+    	<a href="../../../index.html"> < Return to homepage</a>
+        
+        <h1>Energy consumption management</h1>
+
+        <section>
+            <h2>Table of content</h2>
+            <ul>
+                <li><a href="#presentation">Presentation of the project</a></li>
+                <li><a href="#images">Images</a></li>
+                <li><a href="#implementation">Implementation</a></li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="presentation">Presentation of the project</h2>
+
+            <p>This project is one of the biggest that I made, it was split in three stage. The first one was the planification stage, we had to create a report where we had to create gantt and pert diagram, all the hardware/software needed and an analyse of risk during the project. The second stage was modelization stage, we had to draw some sketch of what the application was going to look like, and we had to create some diagram like : use case diagram, interaction overview diagram, sequence diagram, class diagram and entity relation diagram. All these diagram where there to help us for the last stage, the implementation one.</p>
+
+            <p>For the implementation, we had to do this project in Java, we needed to create a RestAPI to send request to the database. All the features had to be test with unit test.</p>
+
+            <p>The subject of the project was an application where you can create an account and create a "wallet" to represent a house with different meter for electricity, gas and water. It can add data to a meter, get plot of consumption on a meter. It have a lot of other functionnalities like making contract between provider and client. But I'm not going to explain all of them.</p>
+
+            <p>It was a project by group of 2. I can't share the source code because it's a university project. But I can show some diagram and image of the final application.</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="images">Images</h2>
+
+            <figure>
+                <img src="images/erd.PNG">
+                <figcaption>The entity relation diagram.</figcaption>
+            </figure>
+
+            <p>Here you can see some screen of the application :</p>
+
+            <figure>
+                <img src="images/login.PNG">
+                <figcaption>The log in screen.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/walletlist.PNG">
+                <figcaption>The list of wallets screen.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/graph.PNG">
+                <figcaption>The graph screen of a meter.</figcaption>
+            </figure>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="implementation">Implementation</h2>
+
+            <p>The application is writen in Java and we used JavaFX for the graphic. All resource are parse into json to be send/receive with http. To do this, we used the framework RESTeasy that can do http request easily.  </p>
+
+            <p>For the backend of the application, I created a database with MySQL and I create some request in http to interact with it and get/post content. To do this, I used the spring framework for Java which is really useful to quickly create a Rest API. I worked a lot on the security of the API so you need access to every single ressource, users passwords are hashed in the database and common vulnerabilities are secured.</p>
+ 
+        </section>
+
+    </body>
+</html>

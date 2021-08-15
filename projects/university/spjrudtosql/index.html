@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../style.css" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Nicolas Vallois - SPJRUD to SQL</title>
+        
+    </head>
+
+    <body>
+
+    	<a href="../../../index.html"> < Return to homepage</a>
+        
+        <h1>SPJRUD to SQL</h1>
+
+        <section>
+            <h2>Table of content</h2>
+            <ul>
+                <li><a href="#presentation">Presentation of the project</a></li>
+                <li><a href="#images">Images</a></li>
+                <li><a href="#implementation">Implementation</a></li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="presentation">Presentation of the project</h2>
+            <p>This is a little project that I had to do for the lesson of database. The objective of the project is to do an interpreter to translate SPJRUD into SQL. SPJRUD come from the <a href="https://en.wikipedia.org/wiki/Relational_algebra">relational algebra</a>, S is for Selection, P for Projection, J is for Join, R is Rename, U is Union and D is Division. After the translation, the SQL request have to be done on a database. It was a project by group of 2.</p>
+
+            <p>I can't share the source code because it's a university project.</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="implementation">Implementation</h2>
+            <p>We had to implement it in Python, to do it we created an object for each operation in SPJRUD and the parameters of the constructor of each operation were the parameters of the operation. For each object, we look for the best translation in SQL and implement it. At the end, we just add the database, it was a simple SQLite db.</p>
+        </section>
+    </body>
+</html>

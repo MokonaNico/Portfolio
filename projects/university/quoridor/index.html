@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../style.css" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Nicolas Vallois - Quoridor</title>
+        
+    </head>
+
+    <body>
+
+    	<a href="../../../index.html"> < Return to homepage</a>
+        
+        <h1>Quoridor</h1>
+
+        <section>
+            <h2>Table of content</h2>
+            <ul>
+                <li><a href="#presentation">Presentation of the project</a></li>
+                <li><a href="#images">Images</a></li>
+                <li><a href="#implementation">Implementation</a></li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="presentation">Presentation of the project</h2>
+            <p>This project was about implementing the board game "Quoridor" into a graphical application in Java. We had to do player versus player but also we had to create an AI to play against. Another important feature was to create a system to save and load a game. It was also ask to invent/find new features to add to the game, so we choose to add a replay system, at the end of the game we can now reverse move by move to see how the game has evolved. We also create a 3D view in addition to the 2D view, so  we can play in both the 2D or 3D version which is pretty cool.</p>
+
+            <p>It was a project by group of two, so we split the task in two, I was in charge to create the model (we did a MVC design pattern) and my friend did all the graphics for the game. My friend also did the save and load system and I created the AI.</p>
+
+            <p>I can't share the source code because it's a university project but you can see some images of the final result just bellow and some explication of the implementation.</p>
+
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="images">Images</h2>
+
+            <p>Here you can find some pictures of the project :</p>
+
+
+            <figure>
+                <img src="images/mainmenu.PNG">
+                <figcaption>Main menu of the game</figcaption>
+            </figure>
+
+
+            <figure>
+                <img src="images/newgame.PNG">
+                <figcaption>New game menu</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/gamebegin.PNG">
+                <figcaption>Begin of a game</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/gameend.PNG">
+                <figcaption>End of a game. (I won against the AI, it a bit too easy even in hard)</figcaption>
+            </figure>
+
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="implementation">Implementation</h2>
+            <p>First we create a small prototype in python to try our ideas and see if they worked. It was a good idea because it didn't take a lot of time and it filtered a lot of "bad idea of design". Just after that I create in java the base of the game and implement all the rules base on what we done with the prototype.</p>
+
+            <p>So for the graphics part, my friend used JavaFX with SceneBuilder to create all the differents scenes of our game. The 3D scene was easy to implement because JavaFx come with a lot of features for 3D scene. My friend did the save/load game by parsing all object into a json string and save it into a file, then for the load process he just parse the json to java object and the game is exactly where we saved it.</p>
+
+            <p>I didn't have much time to do the AI so I made a basic one. I implement the A* pathfinding method to know the shortest path to the end, I made the AI always follow this path, but as well I compute the path for the player. The AI compare the number of step for itself and for the opponent and if the opponent have the advantage, it try to block him with wall, if the AI have the advantage then it just walk by following the path.</p>
+        </section>
+    </body>
+</html>

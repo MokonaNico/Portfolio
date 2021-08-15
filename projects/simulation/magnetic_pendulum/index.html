@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../style.css" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Nicolas Vallois - Magnetic Pendulum</title>
+        
+    </head>
+
+    <body>
+
+    	<a href="../../../index.html"> < Return to homepage</a>
+        
+        <h1>Magnetic Pendulum</h1>
+
+        <section>
+            <h2>Table of content</h2>
+            <ul>
+                <li><a href="#presentation">Presentation of the project</a></li>
+                <li><a href="#images">Images</a></li>
+                <li><a href="#implementation">Implementation</a></li>
+                <li><a href="#reference">Reference</a></li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="presentation">Presentation of the project</h2>
+            <p>In this project, I created a simulation of "The Magnetic Pendulum". It's a simple experimentation with a magnetic pendulum under the influence of three magnets. In this project, you'll see how it shows the relationship between chaos, fractal and physics. </p>
+
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="images">Images</h2>
+
+            <p>On these images, you can how the pendulum move in a 2D space with the three magnets (In fact, I considered that the pendulum is above the magnet to have no issues when magnet and pendulum are overlapping). You can see that when we have near start position, the ending result is very different, that's where the chaos is. 
+            <div class="row_fig">
+                <div class="column_fig">
+                    <img src="images/fig1.png" alt="Figure 1" class="img_fig">
+                </div>
+                <div class="column_fig">
+                    <img src="images/fig2.png" alt="Figure 2" class="img_fig">
+                </div>
+                <div class="column_fig">
+                    <img src="images/fig3.png" alt="Figure 3" class="img_fig">
+                </div>
+            </div> 
+            </p>
+
+            <p>Now we are going to see where the fractals are. For each pixel on the scene, we colored the pixel with the color where the pendulum stop. It takes some times to do all the work but when it's finish, we get the beautiful result that you can see just below. </p>
+            <img src="images/Td250f10p10.png" alt="Basic setting" /> 
+            
+            <p>Let's tweak some settings. We can change multiple value, like the friction, the pendulum pullback force and the magnet force. Here I'm going to modify only the first one. I show the result of modifying the friction just below. As you can see, when the friction is lower, it's like we are zooming out the fractal and more details/mayhem appear.</p>
+
+            <div class="slideshow-container">
+                <div class="mySlides">
+                    <img src="images/friction/Td250f15p10.png" class="slide_img">
+                    <div class="text">Friction : 15</div>
+                </div>
+                <div class="mySlides">
+                    <img src="images/friction/Td250f14p10.png" class="slide_img">
+                    <div class="text">Friction : 14</div>
+                </div>
+                <div class="mySlides">
+                    <img src="images/friction/Td250f13p10.png" class="slide_img">
+                    <div class="text">Friction : 13</div>
+                </div>
+                <div class="mySlides">
+                    <img src="images/friction/Td250f12p10.png" class="slide_img">
+                    <div class="text">Friction : 12</div>
+                </div>
+                <div class="mySlides">
+                    <img src="images/friction/Td250f11p10.png" class="slide_img">
+                    <div class="text">Friction : 11</div>
+                </div>
+                <div class="mySlides">
+                    <img src="images/friction/Td250f10p10.png" class="slide_img">
+                    <div class="text">Friction : 10</div>
+                </div>
+                <div class="mySlides">
+                    <img src="images/friction/Td250f9p10.png" class="slide_img">
+                    <div class="text">Friction : 9</div>
+                </div>
+                <div class="mySlides">
+                    <img src="images/friction/Td250f8p10.png" class="slide_img">
+                    <div class="text">Friction : 8</div>
+                </div>
+                <div class="mySlides">
+                    <img src="images/friction/Td250f7p10.png" class="slide_img">
+                    <div class="text">Friction : 7</div>
+                </div>
+                <div class="mySlides">
+                    <img src="images/friction/Td250f6p10.png" class="slide_img">
+                    <div class="text">Friction : 6</div>
+                </div>
+                <div class="mySlides">
+                    <img src="images/friction/Td250f5p10.png" class="slide_img">
+                    <div class="text">Friction : 5</div>
+                </div>
+                <div class="mySlides">
+                    <img src="images/friction/Td250f4p10.png" class="slide_img">
+                    <div class="text">Friction : 4</div>
+                </div>
+                <div class="mySlides">
+                    <img src="images/friction/Td250f3p10.png" class="slide_img">
+                    <div class="text">Friction : 3</div>
+                </div>
+                <div class="mySlides">
+                    <img src="images/friction/Td250f2p10.png" class="slide_img">
+                    <div class="text">Friction : 2</div>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+
+            <p>Another setting that we can change is the position of the magnets, we will keep the triangular position for now but we can change the distance to the center. The distance on the image above was at 250. Now on the next three images, the distance is 200, 150 and 125, from left to right.</p>
+            <div class="row_fig">
+                <div class="column_fig">
+                    <img src="images/dist/Td200f10p10.png" alt="Distance 200" class="img_fig">
+                </div>
+                <div class="column_fig">
+                    <img src="images/dist/Td150f10p10.png" alt="Distance 150" class="img_fig">
+                </div>
+                <div class="column_fig">
+                    <img src="images/dist/Td125f10p10.png" alt="Distance 125" class="img_fig">
+                </div>
+            </div> 
+
+            <p>Before to add other magnet, we can place the magnet not in a triangle shape but in a vertical line. You can see the result just bellow.</p>
+            <img src="images/shape/Ld250f10p10.png" alt="Line" /> 
+
+            <p>We can try to add mutiple magnets. We will keep the geometric position and place them in square, pentagon and hexagon shapes. You can see the different results bellow.</p>
+            <div class="row_fig">
+                <div class="column_fig">
+                    <img src="images/shape/S2d250f10p10.png" alt="Square" class="img_fig">
+                </div>
+                <div class="column_fig">
+                    <img src="images/shape/Pd300f10p10.png" alt="Pentagon" class="img_fig">
+                </div>
+                <div class="column_fig">
+                    <img src="images/shape/Hd300f10p10.png" alt="Hexagon" class="img_fig">
+                </div>
+            </div> 
+
+            <p>I find all these pictures really beautiful, </p>
+
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="implementation">Implementation</h2>
+            <p>I did this project in java with javafx for the graphics, I use this because that's what I learn at university and it's simple. My objective was to understand how to create a simulation that implies multiple formula of physics.</p>
+            <p>The project link : <a href="https://github.com/nico12354/MagneticPendulum">github</a></p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="reference">Reference</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=C5Jkgvw-Z6E">Youtube video that explain the experimentation</a> (10 oct. 2016)</li>
+                <li><a href="https://beltoforion.de/en/magnetic_pendulum/index.php">Article that shows how to implement it</a></li>
+            </ul>
+        </section>
+        <script src="script.js"></script> 
+    </body>
+</html>
