@@ -27,7 +27,8 @@
         <hr>
 
         <section>
-            <h2 id="presentation">Presentation of the project</h2>
+            <h2 id="presentation">Presentation of the project</h2> 
+            <p>When I started this project, I wanted to learn how to make a basic AI. I found the minimax algorithm and it was a good way to start, so I wanted to implement it on a game. And a simple game easy to understand to begin with was the game of tic tac toe. I also learned the alpha beta pruning because the AI was a bit slow without it.</p>
 
         </section>
 
@@ -36,12 +37,22 @@
         <section>
             <h2 id="images">Images</h2>
 
+            <p>I tried to see how many times my AI was going to win against the random AI. And I tried it with different max number of depth in the minimax algorithm. On the image just below you can see the number of winning (on 10K round) of the random AI by the depth of the minimax algorithm. As you can see, the random AI can win some of the game with a low depth but after a depth of 5 the minimax AI win all the match. </p>
+
+            <img src="images/plot.png">
+
         </section>
 
         <hr>
 
         <section>
             <h2 id="implementation">Implementation</h2>
+
+            <p>I did this project in python, I create differents objects to make a tic tac toe game and I create a "dumb" AI that play randomly just for testing. I created another AI that follow the minimax algorithm. the heuristic function is not really complex : if no one win then it's a value of 0, and if the AI win then it's a positive one multiply by the remaining empty case (I did this so the AI look for a quick win). If the AI is loosing then it's the same with a negative sign.</p>
+
+            <p>This was an old project so it's not really optimized. For exemple with the minimax algorithm I used deepcopy to copy the state of the game but it's more efficient to just undo the last move. Feel free to make a better version of this.</p>
+
+            <p>The link to source code : <a href="https://github.com/nico12354/TicTacToeAI">Github link</a></p>
 
         </section>
 
@@ -50,6 +61,10 @@
         <section>
             <h2 id="reference">Reference</h2>
             <ul>
+
+                <li><a href="https://www.freecodecamp.org/news/minimax-algorithm-guide-how-to-create-an-unbeatable-ai/">Guide to create an AI with minimax algorithm</a></li>
+                <li><a href="https://www.youtube.com/watch?v=trKjYdBASyQ&ab_channel=TheCodingTrain">Video from the coding train that implement minimax on tic tac toe</a></li>
+                <li><a href="https://www.youtube.com/watch?v=l-hh51ncgDI&ab_channel=SebastianLague">Video from Sebastian Lague that explain the minimax and alpha-beta pruning</a></li>
 
             </ul>
         </section>
