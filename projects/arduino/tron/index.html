@@ -20,7 +20,6 @@
                 <li><a href="#presentation">Presentation of the project</a></li>
                 <li><a href="#images">Images</a></li>
                 <li><a href="#implementation">Implementation</a></li>
-                <li><a href="#reference">Reference</a></li>
             </ul>
         </section>
 
@@ -28,6 +27,9 @@
 
         <section>
             <h2 id="presentation">Presentation of the project</h2>
+            <p>For this project, my girlfriend and me wanted to create the tron light cycles game on an arduino. This game is from the movie Tron (1982), players automaticly move in a direction and you can turn to change the direction of your player. When the player move, a trail is left behind with the same color has the player, if you touch your own trail or the trail of another play, your player is destroy. the objective is to be the last one alive. On our project we are going to have only two players but more can easily be added if you edit a bit the source code. We used and lcd tft screen to display the game and two buttons per players to turn the player to the right or the left. </p>
+
+            <p>That was a really interessant project because the arduino have a small memory and we needed too much memory to store the state of the game (like the whole arena). So to implement the game, we needed to use some tricks to use less memory, you can learn more about it in the implementation section.</p>
 
         </section>
 
@@ -36,6 +38,26 @@
         <section>
             <h2 id="images">Images</h2>
 
+            <p>Here you can find some images/videos of the project :</p>
+
+            <figure>
+                <img src="images/tron.jpg"/> 
+                <figcaption>Pictures of the full assembly.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/schema.png"/> 
+                <figcaption>Schema of the project (the lcd screen is not on the schema).</figcaption>
+            </figure>
+
+            <figure>
+                <video controls> 
+                    <source src="images/tron.mp4" type="video/mp4"> 
+                    Sorry, your browser doesn't support embedded videos.
+                </video>
+                <figcaption>Demonstration of a game.</figcaption>
+            </figure>
+
         </section>
 
         <hr>
@@ -43,15 +65,14 @@
         <section>
             <h2 id="implementation">Implementation</h2>
 
-        </section>
+            <p>So for this project I needed to store the arena and the state of all the square in the arena. My first idea was to store a byte for each square and to have special value for wall, player1 and player2. The screen size is 320x240, so I need to store 76 800 byte which is more than the ram of the arduino (8KB). Another idea that I had, was to store the data "in the screen", like I draw the color on the screen, and when I need the information of a square I just get the color of this pixel on the screen. The problem was that my lcd screen cannot send information from the screen, it can only get information and display it.</p>
 
-        <hr>
+            <p>I had to find a way to reduce the memory used. The first thing that I did was to reduce by a factor of 2 the size of the arena. A single pixel was too little so 2x2 pixels was a good size for a square in the arena. This little optimization reduce the memory need to 19 200 byte. At this point I realized that I only needed to store if the square is empty or not, so I only need to have an array of booleans. The problem is that boolean are in reality byte, it's just that the value 0 is a false, and all the other value are true.</p>
 
-        <section>
-            <h2 id="reference">Reference</h2>
-            <ul>
+            <p>I was looking for a way to store a boolean in one bit, and I found the solution : storing an array of 16 bit int with a size of 40x30. Each bit of one 16 bit integer is the state of one square. For example, if you need the value of the square at the postion 18x2, you check in the 16 bit integer at the position 1x0 and you get the bit at the correct offset. With this, the memory needed drop to 2 400 byte which is lower than the 8KB of the arduino.</p>
 
-            </ul>
+            <p>The rest of the project is pretty much straightforward to understand and don't need much explaination. To do this project, you need an elegoo tft lcd screen and an arduino. You can get the library to communicate with the screen on those links : <a href="https://github.com/Erutan409/Elegoo_TFTLCD">Elegoo_TFTLCD</a> & <a href="https://github.com/Erutan409/Elegoo_GFX">Elegoo_GFX</a>. And the source code of the project is here : <a href="https://github.com/nico12354/TronArduino">github link</a></p>
+
         </section>
 
     </body>
