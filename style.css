@@ -64,3 +64,23 @@ hr
     width: 50%;
     color: grey;
 }
+
+img, video
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border: 5px solid #555;
+}
+
+figure
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+figcaption {
+    text-align:center;
+}
