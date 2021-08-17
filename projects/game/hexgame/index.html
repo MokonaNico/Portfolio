@@ -28,7 +28,7 @@
 
         <section>
             <h2 id="presentation">Presentation of the project</h2>
-
+            <p>Hex is a board game for two players, it is composed of a grid of 11x11 hexagons. Each player can color an hexagon of their color each turn and the objective is to connect the opposite side of your color. I really like this game because it's impossible to do a draw, one player must win. Another rule is that on the second move, the player 2 can choose to swap color so it's like the player 2 make the first move. You can find more information and the precise rule on the <a href="https://en.wikipedia.org/wiki/Hex_(board_game)">wikipedia page of game</a>.</p>
         </section>
 
         <hr>
@@ -36,12 +36,35 @@
         <section>
             <h2 id="images">Images</h2>
 
+            <figure>
+            	<img src="images/menu.PNG">
+            	<figcaption>The menu to choose players names.</figcaption>
+            </figure>
+
+            <figure>
+            	<img src="images/empty.PNG">
+            	<figcaption>The beginning of a game with the board empty.</figcaption>
+            </figure>
+
+            <figure>
+            	<img src="images/change.PNG">
+            	<figcaption>During the first clic, the other player can inverse color or not.</figcaption>
+            </figure>
+
+            <figure>
+            	<img src="images/end.PNG">
+            	<figcaption>The end of a game, here black win.</figcaption>
+            </figure>
+
         </section>
 
         <hr>
 
         <section>
             <h2 id="implementation">Implementation</h2>
+            <p>I made this project in Unity because I like this game engine. Scripts in Unity are write in C#. Generating the board was not too much difficult, the website that you can find in reference is a big help to better understand hexagon and space you have to put between them. Then I added the possibility to color case with the player color. The hard part was to verify if a player is winning or not, each time a player place a new color, it have to check if one side is connected to the opposite side. To do that, I use a simple recursive algorithm that visit all the case without going back on a case already visited. It's a winning case if it reach the other side of the board.</p>
+
+            <p>My implementation is only in local, but I'll maybe make an online version and add AI later. You can get try the game here : <a href="https://nico12354.github.io/HexGame/Web/">Webgl version link</a> and you can find the source code here : <a href="https://github.com/nico12354/HexGame">Github link</a></p>
 
         </section>
 
@@ -50,7 +73,7 @@
         <section>
             <h2 id="reference">Reference</h2>
             <ul>
-
+            	<li><a href="https://www.redblobgames.com/grids/hexagons/">Really good site that explain a lot of theory about hexagon and making grid of hexagons.</a></li>
             </ul>
         </section>
 
