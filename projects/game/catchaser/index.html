@@ -28,6 +28,11 @@
 
         <section>
             <h2 id="presentation">Presentation of the project</h2>
+            <p>I wanted to make a little game on unity in one/two days to get used to all the differents tools of unity. Catchaser is really simple, you have a maki in the center of the screen and some cats arrive to try to eat it. The objective of the game is to stop all the cats to eat it by cliking on them. When you click on a cat, the cat run away and you gain 10 points. If a cat reach the maki, you loose the game.</p>
+
+            <p>I added a scoreboard to this game so when you loose a game, you can enter your score and it's send into a database. On the main menu of the game you can see the scoreboard which show the top 10 score.</p>
+
+            <p>This is a little project that I made really quickly so it's really ugly (especially the music), please ignore that.</p>
 
         </section>
 
@@ -36,12 +41,40 @@
         <section>
             <h2 id="images">Images</h2>
 
+            <p>You can find some images of the project just below :</p>
+
+            <figure>
+            	<img src="images/menu.PNG">
+            	<figcaption>This is the main menu of the game.</figcaption>
+            </figure>
+            
+            <figure>
+            	<img src="images/ingame.PNG">
+            	<figcaption>An in game screen where you can see the cats you are comming for the maki !</figcaption>
+            </figure>
+
+            <figure>
+            	<img src="images/submit.PNG">
+            	<figcaption>When you loose you can submit your score with your name so it can be show in the scoreboard.</figcaption>
+            </figure>
+
+            <figure>
+            	<img src="images/scoreboard.PNG">
+            	<figcaption>The scoreboard with the top 10 of the best score of all times. <br>One of the name is "je deviens fou" which means I'm going crazy in english, I wrote that because this music make drive me crazy. x)</figcaption>
+            </figure>
+
+
         </section>
 
         <hr>
 
         <section>
             <h2 id="implementation">Implementation</h2>
+            <p>Like I said in the presentation, I made this project in Unity. I made everything in only one scene which is not the best because I have to activate/desactivate button/object between scene. I know there is better way to do it now but I was learning how to use unity at the time. The difficulty function have a form like : 1 - 1/(1+e^x), with this function, the difficulty grow slowly and stabilize at some point.</p>
+
+            <p>I made an API to enter and read score in database. I used Java with the framework Sprint Boot to create it, it's was really easy because spring boot is really useful for a quick creation of api/database. I didn't wanted to have a seperate database with the api so said to spring to create an embedded h2 database to store the data (it's not a memory database but a file so it keeps data when restarting). I really like the api like it is because it's really simple to deploy on a server, I only have to run the jar file and everything is ready to go. The only problem is that I don't secure the api so everyone can add any score on the database which is bad but I don't know yet how to secure this.</p>
+
+            <p>Here is a link to the source code : <a href="https://github.com/nico12354/CatChaser">Github link</a>. The API is in the folder named api. You can try the game in your browser with webgl : <a href="https://nico12354.github.io/CatChaser/Web/">Webgl version</a> (it don't work on mobile).</p>
 
         </section>
 
@@ -50,7 +83,8 @@
         <section>
             <h2 id="reference">Reference</h2>
             <ul>
-
+            	<li><a href="https://www.youtube.com/watch?v=msXL2oDexqw&list=PLqq-6Pq4lTTbx8p2oCgcAQGQyqN8XeA1x&ab_channel=JavaBrains">Playlist of tutorials to learn Spring Boot.</a></li>
+            	<li><a href="https://www.baeldung.com/spring-boot-h2-database">Tutorial to have and embedded h2 database.</a></li>
             </ul>
         </section>
 
