@@ -20,7 +20,6 @@
                 <li><a href="#presentation">Presentation of the project</a></li>
                 <li><a href="#images">Images</a></li>
                 <li><a href="#implementation">Implementation</a></li>
-                <li><a href="#reference">Reference</a></li>
             </ul>
         </section>
 
@@ -29,6 +28,8 @@
         <section>
             <h2 id="presentation">Presentation of the project</h2>
 
+            <p>This is one of my first project on arduino, not exactly the first but all the other project where just testing component and understanding how they work. It's an implementation of the game of snake with arduino on a 8x8 led matrix and a joystick for the control.</p>
+
         </section>
 
         <hr>
@@ -36,22 +37,35 @@
         <section>
             <h2 id="images">Images</h2>
 
+            <figure>
+            	<img src="images/schema.png">
+            	<figcaption>Schema of the mount.</figcaption>
+            </figure>
+
+            <figure>
+            	<img src="images/picture.jpg">
+            	<figcaption>Picture of the whole project when everything is connected. (it's a bit messy lol)</figcaption>
+            </figure>
+
+            <figure>
+                <video controls> 
+                    <source src="images/movie.mp4" type="video/mp4"> 
+                    Sorry, your browser doesn't support embedded videos.
+                </video>	
+                <figcaption>A video that shows a game.</figcaption>
+            </figure>
+
         </section>
 
         <hr>
 
         <section>
             <h2 id="implementation">Implementation</h2>
+            <p>Implementing the snake is easy, the only "hard" part is to understand how to make the part of the snake to follow the head, but when you get it it's easy to implement. For this project i use the 8x8 matrix led of elegoo to display the board of the game. The snake body is all the read dots and the apple is a red dot blinking. We can't tell the difference between the body and the head of the snake which is a bit bad but I can't do better with a unicolor led matrix.</p>
 
-        </section>
+            <p>To get the input of the player I use a joystick, only certain angle are used to detect a movement to a direction. Because the matrix don't make always clear of the situation of the game, I used a lcd screen to print some informations like the current lenght of the snake and the state of the game.</p>
 
-        <hr>
-
-        <section>
-            <h2 id="reference">Reference</h2>
-            <ul>
-
-            </ul>
+            <p>You can get the source code here : <a href="https://github.com/nico12354/SnakeArduino">Github page</a></p>
         </section>
 
     </body>
