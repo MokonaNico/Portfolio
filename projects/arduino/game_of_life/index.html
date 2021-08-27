@@ -20,7 +20,6 @@
                 <li><a href="#presentation">Presentation of the project</a></li>
                 <li><a href="#images">Images</a></li>
                 <li><a href="#implementation">Implementation</a></li>
-                <li><a href="#reference">Reference</a></li>
             </ul>
         </section>
 
@@ -28,13 +27,62 @@
 
         <section>
             <h2 id="presentation">Presentation of the project</h2>
+            <p>This project is an implementation of the game of life from Conway. I already did the game of life before with java and javafx but this time I did it on arduino with a led 8x8 matrix, which I find really cool because it's really cute to see all the iterations on a little screen. So I'll brievely explain what is the game of life, it's pretty much simple. So the universe here is a 2d grid and each cells of this grid can have two possible states, live or dead. At each step the state of all the grid is updates following some rules that are : <ol> 
+                <li>Any live cell with fewer than two live neighbours dies, as if by underpopulation.</li>
+                <li>Any live cell with two or three live neighbours lives on to the next generation.</li> 
+                <li>Any live cell with more than three live neighbours dies, as if by overpopulation. </li> 
+                <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</li>
+            </ol></p>
 
+            <p>With these simple rules, really impressive patterns can appear, some don't move, other repeat and a few move in a direction. You can see some of them in the image section that I got on my 8x8 led matrix. But it exists a lot more that you can find on the internet if you are interested.</p>
         </section>
 
         <hr>
 
         <section>
             <h2 id="images">Images</h2>
+
+            <figure>
+                <img src="images/schema.png">
+                <figcaption>A schema of the project.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/project.jpg">
+                <figcaption>A picture of the project.</figcaption>
+            </figure>
+
+            <p>All of the below figures are from random generation and I kept best ones : </p>
+
+            <figure>
+                <img src="images/stable.jpg">
+                <figcaption>This pattern is stable and don't change over iteration.</figcaption>
+            </figure>
+
+            <figure>
+                <video controls> 
+                    <source src="images/blinker.mp4" type="video/mp4"> 
+                    Sorry, your browser doesn't support embedded videos.
+                </video>    
+                <figcaption>This pattern is call a blinker, it have two differents phase.</figcaption>
+            </figure>
+
+            <figure>
+                <video controls> 
+                    <source src="images/glider.mp4" type="video/mp4"> 
+                    Sorry, your browser doesn't support embedded videos.
+                </video>    
+                <figcaption>This pattern is call a glider, it moves indefinitely in a diagonal direction. On our implementation, the border are connected to each other so it loops indefinitely. (it's called "periodic boundary conditions")</figcaption>
+            </figure>
+
+            <figure>
+                <video controls> 
+                    <source src="images/random.mp4" type="video/mp4"> 
+                    Sorry, your browser doesn't support embedded videos.
+                </video>    
+                <figcaption>This pattern is really special because it's looping but after a lot of iteration. I find it really beautiful. What is really strange and I can't really explain it is that, with a random generation, it happend really often to get pattern like this one that repeat after a 10/20 iterations. I find this facinating. (I think that it's related with the fact that we have the periodic boundary conditions) </figcaption>
+            </figure>
+
 
         </section>
 
@@ -43,15 +91,9 @@
         <section>
             <h2 id="implementation">Implementation</h2>
 
-        </section>
+            <p>So to represent the game of life, I created a class named after it that handle the grid and can generate the next step. Another think that I did was to randomly generated the first step so some really unespected pattern can appears. In the theory, the grid for the game of life have to be infinite, which is impossible with an implementation on a computer but I was really more limited with my 8x8 led matrix. So I decided that the border have to be connected.</p>
 
-        <hr>
-
-        <section>
-            <h2 id="reference">Reference</h2>
-            <ul>
-
-            </ul>
+            <p>For this project I only used a LED 8x8 matrix connected to my arduino, you can get the source code here : <a href="https://github.com/nico12354/GameOfLifeArduino">Github page</a></p>
         </section>
 
     </body>
