@@ -29,12 +29,40 @@
         <section>
             <h2 id="presentation">Presentation of the project</h2>
 
+            <p>I first learned about raycasting technic to do simple 3D was in a video of an exercice to pass an exam in a programmation school. I find this technic so amazing that I wanted to implement it and try to make a little game out of it. The maths behind raycasting are not so difficult to understand. First I implement a very basic version in java to try this, it's a version without texture and only with color for the walls but I add a 2D view of the map with a representation of the ray to better understand how it works. Next, I made it in C with SDL to try to make an optimized game engine (a little one and finally not so optimized).</p>
+
+            <p>With my little engine I made a maze game where you can choose a difficulty (a size of the maze). And then you have to go to an objective in the maze to win the game.</p>
+
+
         </section>
 
         <hr>
 
         <section>
             <h2 id="images">Images</h2>
+
+            <p>Some images of my raycast implementation : </p>
+
+            <figure>
+                <img src="images/java.PNG">
+                <figcaption>The Java version of the raycast, you can see the top 2D view on the left with the rays in green.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/wall.PNG">
+                <figcaption>The raycast in C but only the walls are rendered.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/floorceil.PNG">
+                <figcaption>The floor and ceils are added.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/barrel.PNG">
+                <figcaption>I added 2D sprites to the game.</figcaption>
+            </figure>
+
 
         </section>
 
@@ -43,6 +71,16 @@
         <section>
             <h2 id="implementation">Implementation</h2>
 
+            <p>For Java, I used JavaFX to render lines on the screen. For the Java version, I don't modify pixel by pixel the screen. I create a bunch of lines for all the x coord of the screen, and I modify the begin position, the end position and the color. I won't explain the math behind the raycast here because you can already find some really good explaination in the references. For the collision of the player, I just render the player as a 2D circle and with JavaFX I can detect collision with the 2D top view.</p>
+
+            <p>My idea was to implement a little engine in C or C++. I looked for a graphical library, easy to used that can draw precise pixels on the screen. A famous library that can do that was SDL so I give it a chance. The first step was try to make SDL works and just create a window, and ... It was really hard, I litteraly past 2/3 days to just make SDL worked properly with CLion and CMake. But once it was done, everything was working perfectly. (And I really better understand how compilation work in C)</p>
+
+            <p>The first step was to setup a little window handler that can create a window, draw precise pixel on the screen and refresh the screen. Next I made a world handler a create player movement with colision. Once it was done I made the simple raycasting with only colors (like in the java version) to try if everything was working fine. Next, I added texture to the walls, to load png file I added SDL_Image to the project. Then I made the ceil and floor which are draw before the wall to appear behind. Last part was the sprite render where you sort sprite by distance to the player and you render the further away first so the closest are drown on the top of the screen. </p>
+
+            <p>So after implementing all of this and make some methods to do all the complex stuff, the engine was ready to be used in a little game where it generate random maze. To generate the maze I used the Randomized depth-first search with a recursive implementation. The player always spawn on the to left of the maze and the objective is on the bottow left. Since with this generation of maze, all part of the maze can lead to all the other part so there is always a solution to the maze. This generator of maze is not the best because it don't create a lot of intersection, I'll maybe implement a better one later.</p>
+
+            <p>You can get all my sources code here : <a href="https://github.com/nico12354/RaycastingJavaFX">Github link for Java Version</a> & <a href="https://github.com/nico12354/RaycastingEngine">Github link for C Version</a></p>
+
         </section>
 
         <hr>
@@ -50,9 +88,11 @@
         <section>
             <h2 id="reference">Reference</h2>
             <ul>
-            	<li>https://www.youtube.com/watch?v=xW8skO7MFYw&ab_channel=javidx9</li>
-            	<li>https://www.youtube.com/watch?v=gYRrGTC7GtA&ab_channel=3DSage</li>
-            	<li>https://lodev.org/cgtutor/raycasting.html</li>
+            	<li><a href="https://www.youtube.com/watch?v=xW8skO7MFYw&ab_channel=javidx9">Video of an implemention of raycast with command line.</a></li>
+            	<li><a href="https://www.youtube.com/watch?v=gYRrGTC7GtA&ab_channel=3DSage">Video that explain how raycast work with a lot of visualitation.</a></li>
+            	<li><a href="https://lodev.org/cgtutor/raycasting.html">A really good tutorial for raycast, it's my main documentation for this project.</a></li>
+                <li><a href="https://dzone.com/articles/sdl2-pixel-drawing">A tutorial to draw pixel with SDL2.</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Maze_generation_algorithm">Wikipedia page of Maze generator.</a></li>
             </ul>
         </section>
 
