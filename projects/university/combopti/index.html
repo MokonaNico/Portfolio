@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../style.css" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Nicolas Vallois - Combinatorial optimization Metaheuristic</title>
+        
+    </head>
+
+    <body>
+
+    	<a href="../../../index.html"> < Return to homepage</a>
+        
+        <h1>Combinatorial optimization - Metaheuristic</h1>
+
+        <section>
+            <h2>Table of content</h2>
+            <ul>
+                <li><a href="#presentation">Presentation of the project</a></li>
+                <li><a href="#images">Images</a></li>
+                <li><a href="#implementation">Implementation</a></li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="presentation">Presentation of the project</h2>
+
+            <p>This is a project that I made during my last year of bachelor. It was a challenge by group of 4 students where we had to make a solver for a specific problem. I writed "challenge" because it's was a bit like a competition of which group was going to have the best solution given some data. The problem that we had was a combinatorial problem, and we had to use a metaheuristic to make a solver.</p>
+
+            <p>The problem was a "cutting problem". There is N quantities to cut and place them into B boxes with a space of E. We can cut the N number how we want and place them how we want into the boxes. The objective to minimise is the sum of the maximum of each boxes.</p>
+
+            <p>The metaheuristic that we choose to solve this problem was the simulated annealing. This was not the best metaheuristic to choose for this type of project but my groupe wanted to try this technique. If you want more information about this metaheuristic, you can check the <a href="https://en.wikipedia.org/wiki/Simulated_annealing">wikipedia page </a>.</p>
+
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="images">Images</h2>
+
+            <p>This plot is the evolution of the cost for each iteration. We can see that during the beginning, the cost vary a lot. And during the end, it's very flat and don't change (we can say with no doubt that we loose a lot of time for nothing). The important part is between the two when we move from pure randomness to get closer to a good solution.</p>
+
+            <figure>
+                <img src="images/plot.png">
+                <figcaption>Plot of the evolution of the cost.</figcaption>
+            </figure>
+
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="implementation">Implementation</h2>
+
+            <p>The first implementation was in python, the simulated annealing is not a difficult metaheuristic to implement so it was pretty easy. The thing that was difficult to find is a good function to find good neighbors. The technique used was to exchange the number of split between two number. After we exchange the number of split, we have to find a good way to split the number. Just split in a random way is not a good idea because the solver fall into traps (like cutting 1000 into 1,1,1,1,996 for example). A good way to cut is to merge a balance cut and a random cut, so we have less chance to fall into these traps. We don't really have to care with how we put the number into boxes, we can just split number in B * E and sort them to place them into the boxes. </p>
+
+            <p>Python is a bit too slow for this type of project, so I convert all the solver into C so it can be really fast. And it was really fast compare to the python version, something like 10 times faster. With this solver, we end up getting really good place for the challenge. We had three set of data, one small, one medium and a big one. We where like 5th for the small, second for the medium and first for the big problem.</p>
+
+            <p>I can't share the source code because it's a university project.</p>
+
+        </section>
+
+    </body>
+</html>
