@@ -65,5 +65,21 @@
             </p>
         </section>
 
+        <script type="text/javascript">
+            let key = [];
+            let requestkey = [ 87, 79, 82, 68, 76, 69 ];
+            document.body.addEventListener("keydown", function(event) {
+                key.push(event.keyCode);
+                //If the last 6 keys enter are wordle than go to the secret link ;)
+                if(JSON.stringify(key) == JSON.stringify(requestkey)){
+                    console.log("WORDLE !!!");
+                    window.location.replace('wordle/index.html');
+                }
+                if(key.length >= 6)
+                    key.shift();
+            });
+        </script>
     </body>
+
+
 </html>
