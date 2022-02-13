@@ -1,0 +1,21 @@
+* 
+{
+    font-family: 'Helvetica',Arial,sans-serif;
+}
+
+body {
+  background-color: #121213;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+.inputzone{
+  text-align:center 
+}
+
+input[type="text"] {
+
+}

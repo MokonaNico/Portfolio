@@ -3,10 +3,16 @@
     <head>
         <meta charset="utf-8" />
         <title>Nicolas Vallois - Wordle</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="data/pokedb.json" defer></script>
+        <script type="text/javascript" src="autocomplete.js" defer></script>
     </head>
 
     <body>
-        <a href="../index.html"> < Return to homepage</a>
-        <h1>Welcome to the secret wordle room</h1>
+        <h1>Poke Wordle !</h1>
+        <div class="inputzone">
+            <input type="text" id="pokeinput" autocomplete="off" list="autofill_list" onkeyup="input_enter(this.value)">
+        </div>
+
     </body>
 </html>
