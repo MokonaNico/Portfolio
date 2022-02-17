@@ -73,7 +73,7 @@
                 //If the last 6 keys enter are wordle than go to the secret link ;)
                 if(JSON.stringify(key) == JSON.stringify(requestkey)){
                     console.log("WORDLE !!!");
-                    window.location.href('https://nico12354.github.io/WordlePokemon/');
+                    window.location.replace('https://nico12354.github.io/WordlePokemon/');
                 }
                 if(key.length >= 6)
                     key.shift();
