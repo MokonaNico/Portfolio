@@ -28,7 +28,10 @@
         <section>
             <h2 id="presentation">Presentation of the project</h2>
 
-            <p></p>
+            <p>This is a project that I made during last year of bachelor. It was by group of two for the signal processing lecture. This project consist of creating a speaker classification program. </p>
+
+
+            <p>The first thing to do was to extract features from sample of voices. We extract those features : signal energy, pitch, formants and MFCC. The next step was to build a rule-based system with the features that we extract to differentiate samples of voice from two speaker. The last step was to made a machine learning system and compare it with the rule-based system.</p>
 
         </section>
 
@@ -40,8 +43,18 @@
             <p></p>
 
             <figure>
-                <img src="images/plot.png">
-                <figcaption>Plot of the evolution of the cost.</figcaption>
+                <img src="images/cepstre_pitchdiff_hamming.png">
+                <figcaption>Plot of the estimated pitch for two speaker. The red one is a female speaker and blue one a male speaker. The pitch was found using the cepstrum with a hamming window.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/formants.png">
+                <figcaption>Plot of FFT of voice frame and the formant of the frame (in red).  </figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/formant_cloud_bdl_slt.png">
+                <figcaption>Plot of a cloud of point which represent two different speaker. The abscissa is the first formant and the ordinate is the second formant. We can see a logical regression with the seperation line.  </figcaption>
             </figure>
 
         </section>
@@ -51,7 +64,7 @@
         <section>
             <h2 id="implementation">Implementation</h2>
 
-            <p></p>
+            <p>To make this project we used python with the following libraries : numpy, scipy, scikits.talkbox and sklearn. I can't share the code because this is a university project. </p>
 
         </section>
 
