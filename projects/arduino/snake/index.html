@@ -10,7 +10,7 @@
 
     <body>
 
-    	<a href="../../../index.html"> < Return to homepage</a>
+        <a href="../../../index.html"> < Return to homepage</a>
         
         <h1>Snake</h1>
 
@@ -28,7 +28,7 @@
         <section>
             <h2 id="presentation">Presentation of the project</h2>
 
-            <p>This is one of my first project on arduino, not exactly the first but all the other project where just testing component and understanding how they work. It's an implementation of the game of snake with arduino on a 8x8 led matrix and a joystick for the control.</p>
+            <p>This is one of my first project on arduino, not exactly the first one but all the other projects' purpose was to test components and understand how they work. It's an implementation of the game Snake using an arduino with a 8x8 led matrix and a joystick for the control.</p>
 
         </section>
 
@@ -38,20 +38,20 @@
             <h2 id="images">Images</h2>
 
             <figure>
-            	<img src="images/schema.png">
-            	<figcaption>Schema of the mount.</figcaption>
+                <img src="images/schema.png">
+                <figcaption>Schema of the assembly.</figcaption>
             </figure>
 
             <figure>
-            	<img src="images/picture.jpg">
-            	<figcaption>Picture of the whole project when everything is connected. (it's a bit messy lol)</figcaption>
+                <img src="images/picture.jpg">
+                <figcaption>Picture of the whole project when everything is connected. (it's a bit messy lol)</figcaption>
             </figure>
 
             <figure>
                 <video controls> 
                     <source src="images/movie.mp4" type="video/mp4"> 
                     Sorry, your browser doesn't support embedded videos.
-                </video>	
+                </video>    
                 <figcaption>A video that shows a game.</figcaption>
             </figure>
 
@@ -61,9 +61,9 @@
 
         <section>
             <h2 id="implementation">Implementation</h2>
-            <p>Implementing the snake is easy, the only "hard" part is to understand how to make the part of the snake to follow the head, but when you get it it's easy to implement. For this project i use the 8x8 matrix led of elegoo to display the board of the game. The snake body is all the read dots and the apple is a red dot blinking. We can't tell the difference between the body and the head of the snake which is a bit bad but I can't do better with a unicolor led matrix.</p>
+            <p>Implementing the snake is easy, the only "hard" part is to understand how to make the body of the snake follow the head, but when you get it it's easy to implement. For this project I used the Elegoo's 8x8 matrix led to display the stage of the game. The snake body is made with red dots and the apple is a single red dot blinking. We can't tell the difference between the body and the head of the snake which is an inconvenience but I can't do better with a unicolor led matrix.</p>
 
-            <p>To get the input of the player I use a joystick, only certain angle are used to detect a movement to a direction. Because the matrix don't make always clear of the situation of the game, I used a lcd screen to print some informations like the current lenght of the snake and the state of the game.</p>
+            <p>To get the input of the player I used a joystick, that I used to get the 4 directions of the snake. I used a lcd screen to print some information like the current length of the snake and the state of the game.</p>
 
             <p>You can get the source code here : <a href="https://github.com/nico12354/SnakeArduino">Github page</a></p>
         </section>
